@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>v2ray</Name>
+  <Repository>lovechen/v2ray</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1587674576</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>1086</HostPort>
+        <ContainerPort>1086</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>1086</HostPort>
+        <ContainerPort>1086</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>1087</HostPort>
+        <ContainerPort>1087</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+      <Port>
+        <HostPort>1087</HostPort>
+        <ContainerPort>1087</ContainerPort>
+        <Protocol>udp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/appdata/v2ray</HostDir>
+      <ContainerDir>/etc/v2ray</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment/>
+  <Labels/>
+  <Config Name="config path" Target="/etc/v2ray" Default="" Mode="rw" Description="Container Path: /etc/v2ray" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/v2ray</Config>
+  <Config Name="1086 TCP" Target="1086" Default="" Mode="tcp" Description="Container Port: 1086 TCP" Type="Port" Display="always" Required="true" Mask="false">1086</Config>
+  <Config Name="1086 UDP" Target="1086" Default="" Mode="udp" Description="Container Port: 1086 UDP" Type="Port" Display="always" Required="true" Mask="false">1086</Config>
+  <Config Name="1087 TCP" Target="1087" Default="" Mode="tcp" Description="Container Port: 1087 TCP" Type="Port" Display="always" Required="true" Mask="false">1087</Config>
+  <Config Name="1087 UDP" Target="1087" Default="" Mode="udp" Description="Container Port: 1087 UDP" Type="Port" Display="always" Required="true" Mask="false">1087</Config>
+</Container>

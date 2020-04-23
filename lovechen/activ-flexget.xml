@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>activ-flexget</Name>
+  <Repository>activ/arch-flexget</Repository>
+  <Registry>https://registry.hub.docker.com/r/activ/arch-flexget/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>http://lime-technology.com/forum/index.php?topic=49545.0</Support>
+  <Project/>
+  <Overview>FlexGet is a multipurpose automation tool for content like torrents, nzbs, podcasts, comics, series, movies, etc. It can use different kinds of sources like RSS-feeds, html pages, csv files, search engines and there are even plugins for sites that do not provide any kind of useful feeds. &#xD;
+ 	The default port used is 3539 for the web interface.</Overview>
+  <Category>Downloaders:</Category>
+  <WebUI>http://[IP]:[PORT:3539]/</WebUI>
+  <TemplateURL>https://raw.githubusercontent.com/activ/docker-templates/master/activ/flexget.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/activ/docker-templates/master/activ/images/flexget-icon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1587035516</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description>FlexGet is a multipurpose automation tool for content like torrents, nzbs, podcasts, comics, series, movies, etc. It can use different kinds of sources like RSS-feeds, html pages, csv files, search engines and there are even plugins for sites that do not provide any kind of useful feeds. &#xD;
+ 	The default port used is 3539 for the web interface.</Description>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>3539</HostPort>
+        <ContainerPort>3539</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/NAS/downloads/torrents_autodownload/</HostDir>
+      <ContainerDir>/downloads/torrents_autodownload/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/NAS/downloads/completed/</HostDir>
+      <ContainerDir>/downloads/completed/</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/activ-flexget</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>false</Value>
+      <Name>DEBUG</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1000</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1000</Value>
+      <Name>PGID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>flexget@flexget</Value>
+      <Name>WEB_PASSWD</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="Host Port 1" Target="3539" Default="3539" Mode="tcp" Description="Container Port: 3539" Type="Port" Display="always" Required="true" Mask="false">3539</Config>
+  <Config Name="Key 1" Target="DEBUG" Default="false" Mode="" Description="Container Variable: DEBUG" Type="Variable" Display="always" Required="false" Mask="false">false</Config>
+  <Config Name="Key 2" Target="PUID" Default="99" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+  <Config Name="Key 3" Target="PGID" Default="100" Mode="" Description="Container Variable: PGID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+  <Config Name="Key 4" Target="WEB_PASSWD" Default="fl3xg3t!" Mode="" Description="Container Variable: WEB_PASSWD" Type="Variable" Display="always" Required="false" Mask="false">flexget@flexget</Config>
+  <Config Name="Host Path 1" Target="/downloads/torrents_autodownload/" Default="" Mode="rw" Description="Container Path: /downloads/torrents_autodownload/" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/NAS/downloads/torrents_autodownload/</Config>
+  <Config Name="Host Path 2" Target="/downloads/completed/" Default="" Mode="rw" Description="Container Path: /downloads/completed/" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/NAS/downloads/completed/</Config>
+  <Config Name="AppData Config Path" Target="/config" Default="/mnt/user/appdata/activ-flexget" Mode="rw" Description="Container Path: /config" Type="Path" Display="advanced-hide" Required="true" Mask="false">/mnt/user/appdata/activ-flexget</Config>
+</Container>
