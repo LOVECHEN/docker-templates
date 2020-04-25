@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>filebrowser</Name>
+  <Repository>80x86/filebrowser:amd64</Repository>
+  <Registry/>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview/>
+  <Category/>
+  <WebUI/>
+  <TemplateURL/>
+  <Icon/>
+  <ExtraParams>--mount type=tmpfs,destination=/tmp</ExtraParams>
+  <PostArgs/>
+  <CPUset>0,1</CPUset>
+  <DateInstalled>1587699609</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Description/>
+  <Networking>
+    <Mode>bridge</Mode>
+    <Publish>
+      <Port>
+        <HostPort>8082</HostPort>
+        <ContainerPort>8082</ContainerPort>
+        <Protocol>tcp</Protocol>
+      </Port>
+    </Publish>
+  </Networking>
+  <Data>
+    <Volume>
+      <HostDir>/mnt/user/NAS/</HostDir>
+      <ContainerDir>/myfiles</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+    <Volume>
+      <HostDir>/mnt/user/appdata/filebrowser</HostDir>
+      <ContainerDir>/config</ContainerDir>
+      <Mode>rw</Mode>
+    </Volume>
+  </Data>
+  <Environment>
+    <Variable>
+      <Value>1000</Value>
+      <Name>PUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>1000</Value>
+      <Name>GUID</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>8082</Value>
+      <Name>WEB_PORT</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>000</Value>
+      <Name>UMASK_SET</Name>
+      <Mode/>
+    </Variable>
+    <Variable>
+      <Value>off</Value>
+      <Name>SSL</Name>
+      <Mode/>
+    </Variable>
+  </Environment>
+  <Labels/>
+  <Config Name="/dev/dri/renderD128" Target="" Default="" Mode="" Description="Container Device: " Type="Device" Display="always" Required="false" Mask="false">/dev/dri/renderD128:/dev/dri/renderD128</Config>
+  <Config Name="PUID" Target="PUID" Default="" Mode="" Description="Container Variable: PUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+  <Config Name="GUID" Target="GUID" Default="" Mode="" Description="Container Variable: GUID" Type="Variable" Display="always" Required="false" Mask="false">1000</Config>
+  <Config Name="WEB_PORT" Target="WEB_PORT" Default="" Mode="" Description="Container Variable: WEB_PORT" Type="Variable" Display="always" Required="false" Mask="false">8082</Config>
+  <Config Name="UMASK_SET" Target="UMASK_SET" Default="" Mode="" Description="Container Variable: UMASK_SET" Type="Variable" Display="always" Required="false" Mask="false">000</Config>
+  <Config Name="SSL" Target="SSL" Default="" Mode="" Description="Container Variable: SSL" Type="Variable" Display="always" Required="false" Mask="false">off</Config>
+  <Config Name="myfiles" Target="/myfiles" Default="" Mode="rw" Description="Container Path: /myfiles" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/NAS/</Config>
+  <Config Name="config" Target="/config" Default="" Mode="rw" Description="Container Path: /config" Type="Path" Display="always" Required="false" Mask="false">/mnt/user/appdata/filebrowser</Config>
+  <Config Name="8082" Target="8082" Default="" Mode="tcp" Description="Container Port: 8082" Type="Port" Display="always" Required="false" Mask="false">8082</Config>
+</Container>
